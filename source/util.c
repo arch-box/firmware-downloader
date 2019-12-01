@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <switch.h>
-
+#include <dirent.h>
 #include "util.h"
 #include "menu.h"
 #include "unzip.h"
@@ -13,6 +13,13 @@ int downloadFirmware(char *url, char *output, int mode)
 {
     if (!downloadFile(url, TEMP_FILE))
     {
+      // check if directory exists
+      DIR *dir = opendir(OFW_PATH);
+      if (dir) closedir(dir);
+      else
+      {
+          mkdir(OFW_PATH, 0777);
+      }
         unzip(TEMP_FILE, mode);
         popUpBox(fntSmall,400, 250, SDL_GetColour(white), "Download complete!");
 		drawText(fntSmall,400, 350, SDL_GetColour(white), "Install with ChoiDojourNX.");
@@ -24,7 +31,7 @@ int downloadFirmware(char *url, char *output, int mode)
     return 1;
 }
 
-/*  
+/*
 void update_app()
 {
     // download new nro as a tempfile.

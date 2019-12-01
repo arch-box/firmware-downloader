@@ -34,7 +34,14 @@ __**The app currently has 2 options.**__
 
 # Screenshots
 
-coming soon
+**Icon**
+![Img](screenshots/20191201_icon.jpg)
+
+**Menu**
+![Img](screenshots/20191201_menu.jpg)
+
+**Legacy Firmware**
+![Img](screenshots/20191201_legacy.jpg)
 
 ----
 
@@ -45,6 +52,8 @@ coming soon
 [Jack](https://github.com/JackInTheShop) for adding the atmosphere-updater GUI to tinfoil-updater!
 
 [rajkosto](https://github.com/rajkosto) for ChoiDojourNX and RajNX!
+
+[eXhumer](https://github.com/eXhumer) for reviewing and helping me improve the code!
 
 [ThiccSatan](https://twitter.com/chonyomankis) for all of the new icons and the new background! 🐢
 

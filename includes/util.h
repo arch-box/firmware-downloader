@@ -2,6 +2,7 @@
 #define _UTIL_H_
 
 #define ROOT                    "/"
+#define OFW_PATH                "/OFW/"
 #define APP_PATH                "/switch/firmware-downloader/"
 #define APP_OUTPUT              "/switch/firmware-downloader/firmware-downloader.nro"
 #define OLD_APP_PATH            "/switch/firmware-downloader.nro"

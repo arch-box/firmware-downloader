@@ -6,7 +6,7 @@
 #include "util.h"
 #include "download.h"
 
-#define APP_VERSION "Firmware Downloader 0.1.0"
+#define APP_VERSION "Firmware Downloader 0.1.1"
 
 void refreshScreen()
 {
@@ -42,12 +42,12 @@ void printOptionList(int cursor)
             // icon for the option selected.
             drawImage(textureArray[i], 125, 250);
             // highlight box.
-            drawShape(SDL_GetColour(dark_blue), 530, (FIRST_LINE + nl - HIGHLIGHT_BOX_MIN), 700, HIGHLIGHT_BOX_MAX);
+            drawShape(SDL_GetColour(dark_blue), 535, (FIRST_LINE + nl - HIGHLIGHT_BOX_MIN + 10), 800, HIGHLIGHT_BOX_MAX - 25);
             // option text.
             drawText(fntSmall, 550, FIRST_LINE+nl, SDL_GetColour(jordy_blue), option_list[i]);
             // description.
-			drawText(fntSmall, 15,605, SDL_GetColour(white), "Note that writing to an exFAT SD card can cause corruption. Be sure to use FAT32.");
-            drawText(fntSmall, 15, 540, SDL_GetColour(white), description_list[i]);
+			drawText(fntSmall, 15,600, SDL_GetColour(white), "Note that writing to an exFAT SD card can cause corruption. Be sure to use FAT32.");
+            drawText(fntSmall, 15, 542, SDL_GetColour(white), description_list[i]);
         }
     }
 }

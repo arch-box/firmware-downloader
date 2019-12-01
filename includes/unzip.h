@@ -5,7 +5,7 @@
 #define UP_STABLE        1
 
 // #define UP_APP              3
-int mkpath(char* file_path, mode_t mode);
+int mkpath(char* dir, mode_t mode);
 int unzip(const char *output, int mode);
 
 #endif

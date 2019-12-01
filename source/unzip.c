@@ -3,29 +3,12 @@
 #include <string.h>
 #include <dirent.h>
 #include <switch.h>
-#include <errno.h>
-#include <assert.h>
 
 #include "unzip.h"
 #include "menu.h"
 
 #define WRITEBUFFERSIZE 15000000 // 15 MB
 #define MAXFILENAME     256
-
-int mkpath(char* file_path, mode_t mode) {
-	assert(file_path && *file_path);
-	for (char* p = strchr(file_path + 1, '/'); p; p = strchr(p + 1, '/')) {
-		*p = '\0';
-		if (mkdir(file_path, mode) == -1) {
-			if (errno != EEXIST) {
-				*p = '/';
-				return -1;
-			}
-		}
-		*p = '/';
-	}
-	return 0;
-}
 
 int unzip(const char *output, int mode)
 {
@@ -44,15 +27,6 @@ int unzip(const char *output, int mode)
         unzOpenCurrentFile(zfile);
         unzGetCurrentFileInfo(zfile, &file_info, filename_inzip, sizeof(filename_inzip), NULL, 0, NULL, 0);
 
-        // don't overwrite ChoiDojourNX.
-        if (!strstr(filename_inzip, "ChoiDojourNX"))
-        {
-              // check if the file exists.
-              FILE *fp = fopen(filename_inzip, "r");
-              if (fp) fclose(fp);
-              else goto jump_to_end;
-        }
-
         // check if the string ends with a /, if so, then its a directory.
         if ((filename_inzip[strlen(filename_inzip) - 1]) == '/')
         {
@@ -62,7 +36,7 @@ int unzip(const char *output, int mode)
             else
             {
                 drawText(fntSmall, 350, 350, SDL_GetColour(white), filename_inzip);
-                mkpath(filename_inzip, 0777);
+                mkdir(filename_inzip, 0777);
             }
         }
         else
