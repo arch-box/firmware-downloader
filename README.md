@@ -6,7 +6,7 @@ Download and extract OFW on your switch's SD card! This doesn't actually install
 
 # Install
 
-Download the the latest release from [here](https://github.com/JackInTheShop/atmosphere-updater/releases).
+Download the the latest release from [here](https://github.com/arch-box/firmware-downloader/releases).
 
 Move the downloaded .nro onto you nintendo switch sd card inside the folder **/switch/firmware-downloader**.
 
