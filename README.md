@@ -2,6 +2,8 @@
 
 Download and extract OFW on your switch's SD card! This doesn't actually install the firmware, you'd still need to run ChoiDojourNX for that. SX OS users might as well just run [blawar](https://github.com/blawar)'s [Tinfoil](https://tinfoil.io/Download) for an AIO solution to download and install any firmware.
 
+2020 Update: [blawar](https://github.com/blawar)'s [Tinfoil](https://tinfoil.io/Download) now supports firmware downloads and installs for Atmosphere, too, as of version 8. 
+
 ----
 
 # Install
